@@ -1,0 +1,79 @@
+.unitImage {
+  height: 50px;
+}
+
+.unitInput {
+  margin-bottom: 20px;
+}
+
+.unitDisplay {
+  margin-bottom: 10px;
+}
+
+#battleControls {
+  margin-bottom: 10px;
+}
+
+#technologies {
+  margin-bottom: 20px;
+}
+
+#battleInfo {
+  margin-bottom: 10px;
+  height: 75px;
+}
+
+#battleControls form {
+  display: inline-block;
+}
+
+#units {
+  border-top: 1px solid black;
+  padding-top: 10px;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.damaged {
+  color: red;
+}
+
+.log {
+  font-size: x-small;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.playerMenuItem {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.playerMenuItem:hover {
+  background-color: #EEE;
+}
+
+.playerInput {
+  margin-bottom: 10px;
+}
+
+.showLogs {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.okIcon {
+  padding-right: 5px;
+}
+
+.modifierInput {
+  width: 75px !important;
+}
+
+#modifiers {
+  margin-bottom: 20px;
+}
+
+#addModifiers {
+ margin-bottom: 20px;
+}
