@@ -13,10 +13,10 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
+         body {
+             padding-top: 50px;
+             padding-bottom: 20px;
+         }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -25,174 +25,163 @@
     </head>
     <body>
         <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Imperious</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container">
-      <div class="row unitInput">
-        <div class="col-lg-6">
-          <h2 id="leftHeading">Player 1</h2>
-          <form class="form-inline" id="p1Units" >
-            <div class="form-group">
-              <label for="p1UnitsInput">Units</label>
-              <input type="text" class="form-control" id="p1UnitsInput" placeholder="e.g. 5fi2cr1wa">
+             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en">upgrade your browser</a> to improve your experience.</p>
+             <![endif]-->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Imperious</a>
+                </div>
             </div>
-            <button type="submit" class="btn btn-default">Set</button>
-          </form>
-        </div>
-        <div class="col-lg-6">
-          <h2 id="rightHeading">Player 2</h2>
-          <form class="form-inline" id="p2Units">
-            <div class="form-group">
-              <label for="p2UnitsInput">Units</label>
-              <input type="text" class="form-control" id="p2UnitsInput" placeholder="e.g. 5fi2cr1wa">
-            </div>
-            <button type="submit" class="btn btn-default">Set</button>
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12" id="battleControls">
-          <form class="form-inline" id="reset">
-            <button type='submit' class='btn btn-default'>New Battle</button>
-          </form>
-          <form class="form-inline" id="battle">
-          </form>
-        </div>
-      </div>
-      <div class="row" id="battleInfo">
-      </div>
-      <div class="row" id="units">
-      </div>
-      <div class="row playerInput">
-        <div class="col-lg-6" id="p1Input">
-          <div class="dropdown">
-            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Player...
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dLabel">
-              <li class="playerMenuItem addPlayerItem">
-                <form class="form-inline" id="addPlayer1">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Player Name">
-                  </div>
-                  <button type="submit" class="btn btn-default">Add Player</button>
-                </form>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6" id="p2Input">
-          <div class="dropdown">
-            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Player...
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dLabel">
-              <li class="playerMenuItem addPlayerItem">
-                <form class="form-inline" id="addPlayer2">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Player Name">
-                  </div>
-                  <button type="submit" class="btn btn-default">Add Player</button>
-                </form>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row" id="technologies">
-        <div class="col-lg-6" id="p1Techs">
-        </div>
-        <div class="col-lg-6" id="p2Techs">
-        </div>
-      </div>
-      <div class="row" id="modifiers">
-      </div>
-      <div class="row" id="addModifiers">
-        <div class="col-lg-6">
-          <form class="form-inline" side="left">
-            <div class="form-group">
-              <input type="text" class="form-control unitIdInput" placeholder="unit: 'fighter', 'all', etc">
-              <input type="text" class="form-control modifierInput" placeholder="mod">
-              <button type="submit" class="btn btn-default">Add Modifier</button>
-              <button class="btn btn-default clearModifiers">Clear</button>
-            </div>
-          </form>
-        </div>
-        <div class="col-lg-6">
-          <form class="form-inline" side="right">
-            <div class="form-group">
-              <input type="text" class="form-control unitIdInput" placeholder="unit: 'fighter', 'all', etc">
-              <input type="text" class="form-control modifierInput" placeholder="mod">
-              <button type="submit" class="btn btn-default">Add Modifier</button>
-              <button class="btn btn-default clearModifiers">Clear</button>
-            </div>
-          </form>
-        </div>
-      </div>
+        </nav>
 
-      <!-- <div class="row" id="selectRace"> -->
-      <!--   <div class="col-lg-6"> -->
-      <!--     <button id="raceDropdownLabel1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-      <!--       Race... -->
-      <!--       <span class="caret"></span> -->
-      <!--     </button> -->
-      <!--     <ul class="dropdown-menu addRaceMenu" aria-labelledby="raceDropdownLabel1"> -->
-      <!--     </ul> -->
-      <!--   </div> -->
-      <!--   <div class="col-lg-6"> -->
-      <!--     <button id="raceDropdownLabel1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-      <!--       Race... -->
-      <!--       <span class="caret"></span> -->
-      <!--     </button> -->
-      <!--     <ul class="dropdown-menu addRaceMenu" aria-labelledby="raceDropdownLabel1"> -->
-      <!--     </ul> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <div class="row showLogs">
-        <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#logs" aria-expanded="false" aria-controls="logs">
-          Logs
-        </button>
-      </div>
-      <div class="row logs panel-collapse collapse" id="logs">
-        <div class="col-lg-6 log" id="p1Log"></div>
-        <div class="col-lg-6 log" id="p2Log"></div>
-      </div>
-      <hr>
+        <div class="container">
+            <div class="row unitInput">
+                <div class="col-lg-6">
+                    <h2 id="leftHeading">Player 1</h2>
+                    <form class="form-inline" id="p1Units" >
+                        <div class="form-group">
+                            <label for="p1UnitsInput">Units</label>
+                            <input type="text" class="form-control" id="p1UnitsInput" placeholder="e.g. 5fi2cr1wa">
+                        </div>
+                        <button type="submit" class="btn btn-default">Set</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <h2 id="rightHeading">Player 2</h2>
+                    <form class="form-inline" id="p2Units">
+                        <div class="form-group">
+                            <label for="p2UnitsInput">Units</label>
+                            <input type="text" class="form-control" id="p2UnitsInput" placeholder="e.g. 5fi2cr1wa">
+                        </div>
+                        <button type="submit" class="btn btn-default">Set</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12" id="battleControls">
+                    <form class="form-inline" id="reset">
+                        <button type='submit' class='btn btn-default'>New Battle</button>
+                    </form>
+                    <form class="form-inline" id="battle">
+                    </form>
+                </div>
+            </div>
+            <div class="row" id="battleInfo">
+            </div>
+            <div class="row" id="units">
+            </div>
+            <div class="row playerInput">
+                <div class="col-lg-6" id="p1Input">
+                    <div class="dropdown">
+                        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Player...
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li class="playerMenuItem addPlayerItem">
+                                <form class="form-inline" id="addPlayer1">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Player Name">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Add Player</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6" id="p2Input">
+                    <div class="dropdown">
+                        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Player...
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li class="playerMenuItem addPlayerItem">
+                                <form class="form-inline" id="addPlayer2">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Player Name">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Add Player</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="technologies">
+                <div class="col-lg-6" id="p1Techs">
+                </div>
+                <div class="col-lg-6" id="p2Techs">
+                </div>
+            </div>
+            <div class="row" id="modifiers">
+            </div>
+            <div class="row" id="addModifiers">
+                <div class="col-lg-6">
+                    <form class="form-inline" side="left">
+                        <div class="form-group">
+                            <input type="text" class="form-control unitIdInput" placeholder="unit: 'fighter', 'all', etc">
+                            <input type="text" class="form-control modifierInput" placeholder="mod">
+                            <button type="submit" class="btn btn-default">Add Modifier</button>
+                            <button class="btn btn-default clearModifiers">Clear</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form class="form-inline" side="right">
+                        <div class="form-group">
+                            <input type="text" class="form-control unitIdInput" placeholder="unit: 'fighter', 'all', etc">
+                            <input type="text" class="form-control modifierInput" placeholder="mod">
+                            <button type="submit" class="btn btn-default">Add Modifier</button>
+                            <button class="btn btn-default clearModifiers">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-      <footer>
-      </footer>
-    </div> <!-- /container -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
-      <script src="js/vendor/underscore.js"></script>
-      <script src="js/vendor/bootstrap.min.js"></script>
-      <script src="js/vendor/html.sortable.js"></script>
-      <script src="js/main.js"></script>
+            <!-- <div class="row" id="selectRace"> -->
+            <!--   <div class="col-lg-6"> -->
+            <!--     <button id="raceDropdownLabel1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+            <!--       Race... -->
+            <!--       <span class="caret"></span> -->
+            <!--     </button> -->
+            <!--     <ul class="dropdown-menu addRaceMenu" aria-labelledby="raceDropdownLabel1"> -->
+            <!--     </ul> -->
+            <!--   </div> -->
+            <!--   <div class="col-lg-6"> -->
+            <!--     <button id="raceDropdownLabel1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+            <!--       Race... -->
+            <!--       <span class="caret"></span> -->
+            <!--     </button> -->
+            <!--     <ul class="dropdown-menu addRaceMenu" aria-labelledby="raceDropdownLabel1"> -->
+            <!--     </ul> -->
+            <!--   </div> -->
+            <!-- </div> -->
+            <div class="row showLogs">
+                <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#logs" aria-expanded="false" aria-controls="logs">
+                    Logs
+                </button>
+            </div>
+            <div class="row logs panel-collapse collapse" id="logs">
+                <div class="col-lg-6 log" id="p1Log"></div>
+                <div class="col-lg-6 log" id="p2Log"></div>
+            </div>
+            <hr>
 
-      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-      <script>
-          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-          function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-          e.src='https://www.google-analytics.com/analytics.js';
-          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-          ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-      </script>
+            <footer>
+            </footer>
+        </div> <!-- /container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+        <script src="js/vendor/underscore.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/html.sortable.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
-u
