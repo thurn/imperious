@@ -5,8 +5,6 @@ $(function() {
         spaceBattleNextRound: "spaceBattleNextRound",
         rollSpaceBattle: "rollSpaceBattle",
         applyHits: "applyHits",
-        pdsFire: "pdsFire",
-        dreadnoughtFire: "dreadnoughtFire",
         destroyerBarrage: "destroyerBarrage"
     };
 
@@ -16,18 +14,12 @@ $(function() {
         destroyer: "destroyer",
         dreadnought: "dreadnought",
         fighter: "fighter",
-        flagship: "flagship",
-        groundforce: "groundforce",
-        pds: "pds",
-        spacedock: "spacedock",
         warsun: "warsun"
     };
 
     var BaseToHit = {
-        groundforce: 8,
         carrier: 9,
         fighter: 9,
-        pds: 6,
         warsun: 3,
         destroyer: 9,
         cruiser: 7,
@@ -36,21 +28,14 @@ $(function() {
 
     var Technology = {
         advancedFighters: "advancedFighters",
-        assaultCannon: "assaultCannon",
         automatedDefenseTurrets: "automatedDefenseTurrets",
         cybernetics: "cybernetics",
-        gravitonLaserSystem: "gravitonLaserSystem",
-        hylarVAssaultLaser: "hylarVAssaultLaser",
-        magenDefenseGrid: "magenDefenseGrid",
-        maneuveringJets: "maneuveringJets"
+        hylarVAssaultLaser: "hylarVAssaultLaser"
     };
 
     var Technologies = new Map([
         [Technology.advancedFighters, {
             name: "Advanced Fighers"
-        }],
-        [Technology.assaultCannon, {
-            name: "Assault Cannon"
         }],
         [Technology.automatedDefenseTurrets, {
             name: "Automated Defense Turrets"
@@ -58,157 +43,18 @@ $(function() {
         [Technology.cybernetics, {
             name: "Cybernetics"
         }],
-        [Technology.gravitonLaserSystem, {
-            name: "Graviton Laser System"
-        }],
         [Technology.hylarVAssaultLaser, {
             name: "Hylar V Assault Laser"
         }],
-        [Technology.magenDefenseGrid, {
-            name: "Magen Defense Grid"
-        }],
-        [Technology.maneuveringJets, {
-            name: "Maneuvering Jets"
-        }]
-    ]);
-
-    var Race = {
-        arborec: "arborec",
-        creuss: "creuss",
-        hacan: "hacan",
-        jolnar: "jolnar",
-        l1z1x: "l1z1x",
-        lazax: "lazax",
-        letnev: "letnev",
-           mentak: "mentak",
-           muaat: "muaat",
-           naalu: "naalu",
-           nekro: "nekro",
-           saar: "saar",
-           sardakkNorr: "sardakkNorr",
-           sol: "sol",
-           winnu: "winnu",
-           xxcha: "xxcha",
-           yin: "yin",
-           yssaril: "yssaril"
-    };
-
-    var Races = new Map([
-        [Race.arborec, {
-            name: "The Arborec",
-            flagshipToHit: 6,
-            flagshipDice: 2,
-            flagshipName: "Duha Menaimon"
-        }],
-        [Race.creuss, {
-            name: "The Ghosts of Creuss",
-            flagshipToHit: 5,
-            flagshipDice: 1,
-            flagshipName: "Hil Colish"
-        }],
-        [Race.hacan, {
-            name: "The Emirates of Hacan",
-            flagshipToHit: 7,
-            flagshipDice: 3,
-            flagshipName: "Wrath of Kenara"
-        }],
-        [Race.jolnar, {
-            name: "The Universities of Jol-Nar",
-            flagshipToHit: 2,
-            flagshipDice: 2,
-            flagshipName: "J.N.S. Hylarim"
-        }],
-        [Race.l1z1x, {
-            name: "The L1Z1X Mindnet",
-            flagshipToHit: 5,
-            flagshipDice: 3,
-            flagshipName: "0.0.1"
-        }],
-        [Race.letnev, {
-            name: "The Barony of Letnev",
-            flagshipToHit: 5,
-            flagshipDice: 2,
-            flagshipName: "Arc Secundus"
-        }],
-        [Race.mentak, {
-            name: "The Mentak Coalition",
-            flagshipToHit: 5,
-            flagshipDice: 2,
-            flagshipName: "Fourth Moon"
-        }],
-        [Race.muaat, {
-            name: "The Embers of Muaat",
-            flagshipToHit: 5,
-            flagshipDice: 3,
-            flagshipName: "The Inferno"
-        }],
-        [Race.naalu, {
-            name: "The Naalu Collective",
-            flagshipToHit: 8,
-            flagshipDice: 2,
-            flagshipName: "Matriarch"
-        }],
-        [Race.nekro, {
-            name: "The Nekro Virus",
-            flagshipToHit: 9,
-            flagshipDice: 3,
-            flagshipName: "The Alastor"
-        }],
-        [Race.saar, {
-            name: "The Clan of Saar",
-            flagshipToHit: 6,
-            flagshipDice: 3,
-            flagshipName: "Son of Ragh"
-        }],
-        [Race.sardakkNorr, {
-            name: "Sardakk N'oor",
-            flagshipToHit: 5,
-            flagshipDice: 3,
-            flagshipName: "C'Morran Norr"
-        }],
-        [Race.sol, {
-            name: "Federation of Sol",
-            flagshipToHit: 5,
-            flagshipDice: 3,
-            flagshipName: "Genesis I"
-        }],
-        [Race.winnu, {
-            name: "The Winnu",
-            flagshipToHit: 7,
-            flagshipDice: null,
-            flagshipName: "Salai Sai Corian"
-        }],
-        [Race.xxcha, {
-            name: "The Xxcha Kingdom",
-            flagshipToHit: 6,
-            flagshipDice: 2,
-            flagshipName: "Loncara Ssodu"
-        }],
-        [Race.yin, {
-            name: "The Yin Brotherhood",
-            flagshipToHit: 5,
-            flagshipDice: 2,
-            flagshipName: "Van Hauge"
-        }],
-        [Race.yssaril, {
-            name: "The Yssaril Tribes",
-            flagshipToHit: 7,
-            flagshipDice: 2,
-            flagshipName: "Y'sia Y'ssrila"
-        }]
     ]);
 
     var DestroyUnitsOrder = [
-        UnitTypes.groundforce,
         UnitTypes.fighter,
         UnitTypes.destroyer,
         UnitTypes.cruiser,
         UnitTypes.carrier,
         UnitTypes.dreadnought,
-        UnitTypes.warsun,
-        UnitTypes.flagship,
-        UnitTypes.pds,
-        UnitTypes.spacedock
+        UnitTypes.warsun
     ];
 
     var Sides = {
@@ -243,7 +89,6 @@ $(function() {
             case UnitTypes.carrier:
             case UnitTypes.dreadnought:
             case UnitTypes.warsun:
-            case UnitTypes.flagship:
                 return true;
             default:
                 return false;
@@ -356,14 +201,6 @@ $(function() {
             return UnitTypes.dreadnought;
         } else if (string.startsWith("fi")) {
             return UnitTypes.fighter;
-        } else if (string.startsWith("fl")) {
-            return UnitTypes.flagship;
-        } else if (string.startsWith("g")) {
-            return UnitTypes.groundforce;
-        } else if (string.startsWith("p")) {
-            return UnitTypes.pds;
-        } else if (string.startsWith("s")) {
-            return UnitTypes.spacedock;
         } else if (string.startsWith("w")) {
             return UnitTypes.warsun;
         } else {
@@ -378,7 +215,7 @@ $(function() {
 
         // Reset unit counts
         for (var unitId in UnitTypes) {
-            _units[side][unitId] = {count: 0, damaged: 0, adjacent: 0};
+            _units[side][unitId] = {count: 0, damaged: 0};
         }
 
         for (var i = 0; i < arr.length; i += 2) {
@@ -389,20 +226,11 @@ $(function() {
                 damaged = true;
             }
 
-            var adjacent = false;
-            if (unitString.startsWith("@")) {
-                unitString = unitString.substring(1);
-                adjacent = true;
-            }
-
             var unitType = unitTypeFromString(unitString);
             if (unitType == null) return;
             _units[side][unitType].count += parseInt(arr[i], 10);
             if (damaged) {
                 _units[side][unitType].damaged += parseInt(arr[i], 10);
-            }
-            if (adjacent) {
-                _units[side][unitType].adjacent += parseInt(arr[i], 10);
             }
         }
     }
@@ -498,12 +326,6 @@ $(function() {
                 if (sideHasTech(side, Technology.hylarVAssaultLaser)) {
                     bonus += 1;
                     logExtra += "[hylarVAssaultLaser]";
-                }
-                break;
-            case UnitTypes.pds:
-                if (sideHasTech(side, Technology.magenDefenseGrid)) {
-                    bonus += 1;
-                    logExtra += "[magenDefenseGrid]";
                 }
                 break;
             case UnitTypes.cruiser:
@@ -606,73 +428,12 @@ $(function() {
                 }
             });
         };
+        _hits = {};
     }
 
     function sideHasTech(side, tech) {
         if (side == null || tech == null) throw "null argument";
         return _selectedPlayers[side] != null && _players[_selectedPlayers[side]].technology[tech].owned;
-    }
-
-    function applyPdsFire() {
-        // TODO opponents get -1 for PDS with maneuvering jets & -2 from adjacent systems
-        for (var side in Sides) {
-            var numHits = 0;
-            var unitId = UnitTypes.pds;
-            var unit = _units[side][unitId];
-            var base = BaseToHit[unitId];
-            var bonus = {bonus: 0};
-            var player;
-
-            if (_selectedPlayers[side] != null) {
-                bonus = getHitBonus(side, unitId);
-            }
-
-            for (var i = 0; i < unit.count; ++i) {
-                var logExtra = "";
-                var opponent = opponentId(side);
-                var modifiedBonus = _.clone(bonus);
-                if (sideHasTech(opponent, Technology.maneuveringJets)) {
-                    // To-hit penalty if opponent has maneuvering jets
-                    modifiedBonus.logExtra += "[jets]";
-                    if (i < unit.adjacent) {
-                        modifiedBonus.bonus -= 2;
-                    } else  {
-                        modifiedBonus.bonus -= 1;
-                    }
-                }
-
-                if (rollForHit(side, unitId, base, modifiedBonus, logExtra)) {
-                    numHits += 1;
-                } else if (sideHasTech(side, Technology.gravitonLaserSystem)) {
-                    // Graviton laser system reroll
-                    if (rollForHit(side, unitId, base, modifiedBonus, "[reroll]")) {
-                        numHits += 1;
-                    }
-                }
-            }
-            _hits[side] = numHits;
-        }
-    }
-
-    function applyDreadnoughtFire() {
-        for (var side in Sides) {
-            var numHits = 0;
-            var unitId = UnitTypes.dreadnought;
-            var unit = _units[side][unitId];
-            var base = BaseToHit[unitId];
-            var bonus = {bonus: 0};
-
-            if (_selectedPlayers[side] != null) {
-                bonus = getHitBonus(side, unitId);
-            }
-
-            for (var i = 0; i < unit.count; ++i) {
-                if (rollForHit(side, unitId, base, bonus)) {
-                    numHits += 1;
-                }
-            }
-            _hits[side] = numHits;
-        }
     }
 
     function applyDestroyerBarrage() {
@@ -716,10 +477,12 @@ $(function() {
     function reset(event) {
         event.preventDefault();
         for (var side in Sides) {
-          logForSide(side, "\n\n>>>>> RESET <<<<<\n\n");
+            logForSide(side, "\n\n>>>>> RESET <<<<<\n\n");
         }
         _previousState = State.spaceBattleStart;
         _state = State.spaceBattleStart;
+        _hits = {};
+        _fighterHits = {};
         advanceToState(getStateAfter(_state, _previousState));
         update();
     }
@@ -734,12 +497,6 @@ $(function() {
 
         event.preventDefault();
         switch (_state) {
-            case State.pdsFire:
-                applyPdsFire();
-                break;
-            case State.dreadnoughtFire:
-                applyDreadnoughtFire();
-                break;
             case State.destroyerBarrage:
                 applyDestroyerBarrage();
                 break;
@@ -822,10 +579,6 @@ $(function() {
             case State.spaceBattleStart:
             case State.spaceBattleNextRound:
                 return null;
-            case State.pdsFire:
-                return "PDS Fire";
-            case State.dreadnoughtFire:
-                return "Dreadnought Fire";
             case State.destroyerBarrage:
                 return "Destroyer Anti-Fighter Barrage";
             case State.rollSpaceBattle:
@@ -851,26 +604,9 @@ $(function() {
         switch (state) {
             case State.inputUnits:
             case State.spaceBattleStart:
-                if (unitIsPresent(UnitTypes.pds)) {
-                    return State.pdsFire;
-                }
-                // Intentional fall-through
-            case State.pdsFire:
-                if (state == State.pdsFire && previousState != State.applyHits) {
-                    return State.applyHits;
-                }
-                if (unitIsPresentWithTechnology(UnitTypes.dreadnought, Technology.assaultCannon)) {
-                    return State.dreadnoughtFire;
-                }
-                // Intentional fall-through
-            case State.dreadnoughtFire:
-                if (state == State.dreadnoughtFire && previousState != State.applyHits) {
-                    return State.applyHits;
-                }
                 if (unitIsPresent(UnitTypes.destroyer)) {
                     return State.destroyerBarrage;
                 }
-                // Intentional fall-through
             case State.destroyerBarrage:
                 if (state == State.destroyerBarrage && previousState != State.applyHits) {
                     return State.applyHits;
@@ -881,10 +617,6 @@ $(function() {
                 return State.applyHits;
             case State.applyHits:
                 switch (previousState) {
-                    case State.pdsFire:
-                        return getStateAfter(State.pdsFire, State.applyHits);
-                    case State.dreadnoughtFire:
-                        return getStateAfter(State.dreadnoughtFire, State.applyHits);
                     case State.destroyerBarrage:
                         return getStateAfter(State.destroyerBarrage, State.applyHits);
                     default:
@@ -905,9 +637,6 @@ $(function() {
         "<b><%= unitId %></b> <%= unit.count %> " +
         "<% if (unit.damaged > 0) { %>" +
         "<span class='damaged'>(<%= unit.damaged %>)</span>" +
-        "<% } %>" +
-        "<% if (unit.adjacent > 0) { %>" +
-        "<span class='adjacent'>(<%= unit.adjacent %> adjacent)</span>" +
         "<% } %>" +
         "</li>" +
         "<% } %>" +
@@ -1033,8 +762,10 @@ $(function() {
             if (_state == State.applyHits) {
                 if (_previousState == State.destroyerBarrage) {
                     $("#battleInfo").append(fighterHitCountTemplate({hits: _fighterHits[side]}));
+                    logForSide(side, "Rolled " + _fighterHits[side] + " fighter hits");
                 } else {
                     $("#battleInfo").append(hitCountTemplate({hits: _hits[side]}));
+                    logForSide(side, "Rolled " + _hits[side] + " hits");
                 }
             }
         };
